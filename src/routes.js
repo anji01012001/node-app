@@ -27,7 +27,7 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) {
       // return res.status(400).json({ msg: 'Invalid Credentials' });
-      return res.status(400).json({ msg: email });
+      return res.status(400).json({ msg: user });
     }
     res.json(user);
   } catch (err) {
